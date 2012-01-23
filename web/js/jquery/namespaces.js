@@ -1,0 +1,1 @@
+(function(a){if({}.__proto__){a.namespace=function(b){a.fn[b]=function c(){this.__proto__=arguments.callee;return this};a.fn[b].__proto__=a.fn};a.fn.$=function(){this.__proto__=a.fn;return this}}else{a.namespace=function(b){a.fn[b]=function c(){return this.extend(arguments.callee)}};a.fn.$=function(){var b=this.length;this.extend(a.fn);this.length=b;return this}}})(jQuery);

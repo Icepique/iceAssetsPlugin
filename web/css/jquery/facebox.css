@@ -1,0 +1,201 @@
+#facebox .b {
+  background:url(/assets/images/facebox/bg.png);
+}
+
+#facebox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+  text-align: left;
+}
+
+#facebox .popup {
+  position: relative;
+}
+
+#facebox table {
+  border-collapse: collapse;
+}
+
+#facebox tr {
+  border-bottom: 0 !important;
+}
+
+#facebox td {
+  border-bottom: 0;
+  padding: 0;
+}
+
+#facebox .body {
+  padding: 10px;
+  background: #fff;
+  width: 370px;
+}
+
+#facebox .loading {
+  text-align: center;
+}
+
+#facebox .image {
+  text-align: center;
+}
+
+#facebox .close {
+  display: block;
+  margin: 4px 4px 0;
+}
+
+#facebox img {
+  border: 0;
+  margin: 0;
+  max-width: 800px;
+  max-height: 500px;
+}
+
+#facebox ul {
+  border-top:1px solid #d6d6d6;
+  display:block;
+  margin-top:8px;
+  padding-top:16px;
+}
+
+#facebox li {
+  color:#6F6F6F;
+  font-size:13px;
+  line-height:18px;
+  padding-bottom:8px;
+}
+
+#facebox li b {
+  font-weight: bold;
+}
+
+#facebox .footer {
+  border-top: 1px solid #DDDDDD;
+  padding-top: 5px;
+  margin-top: 10px;
+  text-align: right;
+  clear: both;
+}
+
+#facebox .no-footer .footer {
+	display: none !important;
+}
+
+#facebox .login {
+	width: 306px;
+}
+
+#facebox .login hr {
+	border: none;
+	border-bottom:solid 5px #929292;
+	margin: 0 -10px 12px;
+	padding-top: 12px;
+	clear: both;
+}
+
+#facebox .login .form {
+	-moz-border-radius:3px 3px 3px 3px;
+	background-color:#F5F5F3;
+	border:1px solid #E9E9E7;
+	padding:14px 16px;
+	margin-bottom: 12px;
+}
+
+#facebox .login button, #facebox .signup button {
+	width: 100%;
+	margin: 0;
+}
+
+#facebox form.signup .form {
+	position: relative;
+	width: 272px;
+}
+
+#facebox form.signup .wrapper.text {
+	width: 440px;
+}
+
+.webkit #facebox form.signup .wrapper.text {
+	width: 445px;
+}
+
+#facebox form.signup .wrapper.match {
+	width: 467px;
+}
+
+
+#facebox form.signup .message {
+	float: left;
+}
+
+#facebox form.signup label {
+	color:#6F6F6F;
+	font-size:12px;
+	font-weight:bold;
+	line-height:17px;
+}
+
+#facebox form.signup .wrapper {
+	margin-bottom:8px;
+}
+
+#facebox form.signup input {
+	width:256px !important;
+}
+
+.webkit #facebox .signup button {
+	position: relative;
+	top: 0px;
+}
+
+#facebox .wide {
+	width: 570px !important;
+}
+
+#facebox .tl, #facebox .tr, #facebox .bl, #facebox .br {
+  height: 5px;
+  width: 5px;
+  overflow: hidden;
+  padding: 0;
+  background:url(/assets/images/facebox/corners.png);
+}
+
+#facebox .tl {
+  background-position: top left;
+}
+
+#facebox .tr {
+  background-position: top right;
+}
+
+#facebox .bl {
+  background-position: bottom left;
+}
+
+#facebox .br {
+  background-position: bottom right;
+}
+
+#facebox_overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+}
+
+.facebox_hide {
+  z-index:-100;
+}
+
+.facebox_overlayBG {
+  background-color: #EAEAEA;
+  z-index: 999;
+}
+
+* html #facebox_overlay { /* ie6 hack */
+  position: absolute;
+  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}

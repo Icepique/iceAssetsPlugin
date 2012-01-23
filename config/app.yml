@@ -1,0 +1,7 @@
+all:
+  ice_assets:
+    domain: icecdn.net
+
+dev:
+  ice_assets:
+    domain: icecdn.dev

@@ -1,0 +1,412 @@
+/*
+ * Sexy Buttons
+ * 
+ * DESCRIPTION:
+ *   Sexy, skinnable HTML/CSS buttons with icons.
+ * 
+ * PROJECT URL: 
+ *   http://code.google.com/p/sexybuttons/
+ * 
+ * AUTHOR:
+ *   Richard Davies
+ *   http://www.richarddavies.us
+ *   Richard@richarddavies.us
+ * 
+ * VERSION:
+ *   1.1
+ * 
+ * LICENSE:
+ *   Apache License 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
+ *   Creative Commons 3.0 Attribution  (http://creativecommons.org/licenses/by/3.0/)
+ * 
+ * CREDITS:
+ *   Inspired by, derived from, and thanks to:
+ *   http://www.p51labs.com/simply-buttons-v2/
+ *   http://www.oscaralexander.com/tutorials/how-to-make-sexy-buttons-with-css.html
+ *   http://www.zurb.com/article/266/super-awesome-buttons-with-css3-and-rgba
+ *   http://www.elctech.com/snippets/make-your-buttons-look-super-awesome
+ * 
+ * USAGE:
+ *   Simply add class="sexybutton [skin]" to a <button> or <a> element and wrap the label text with double <span>s.
+ *   You can optionally add a "silk" icon to the button text by using a third <span> with class to identify the icon.   
+ * 
+ * EXAMPLE: 
+ *   <button id="btn1" class="sexybutton" name="btn1" type="submit" value="Submit">
+ *     <span><span><span class="ok">Submit</span></span></span>
+ *   </button>
+ */
+
+
+/* 
+ *  Generic styles for all Sexy Buttons
+ */
+
+.button {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font: bold 13px "Helvetica Neue", Helvetica, Arial, clean, sans-serif !important;
+  text-decoration: none !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.20);
+  background: none;
+  border: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  
+  /* Fix extra width padding in IE */
+  _width: 0;
+  overflow: visible;
+}
+
+.button span {
+  display: block;            /* Prevents :active from working in IE--oh well! */
+  height: 24px;
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.button span span {
+  padding-right: 0;
+  padding-left: 12px;
+  line-height: 24px;
+  background-position: left top;
+}
+
+.button span span span {
+  padding-left: 21px;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: left center;
+  /* IE6 still requires a PNG transparency fix */ 
+  _background-image: none;
+  _padding-left: 0;
+}
+
+.button span span span.after {
+  padding-left: 0px;
+  padding-right: 21px;
+  background-position: right center;
+  /* IE6 still requires a PNG transparency fix */ 
+  _padding-right: 0;
+}
+
+.button[disabled],
+.button[disabled]:hover,
+.button[disabled]:focus,
+.button[disabled]:active,
+.button.disabled,
+.button.disabled:hover,
+.button.disabled:focus,
+.button.disabled:active {
+  color: #333 !important;
+  cursor: inherit;
+  text-shadow: none; 
+  opacity: 0.33;
+}
+
+.button:hover span,
+.button:focus span {
+  background-position: 100% -24px;
+}
+
+.button:hover span span,
+.button:focus span span {
+  background-position: 0% -24px;
+}
+
+.button:active span {
+  background-position: 100% -48px;
+}
+
+.button:active span span {
+  background-position: 0% -48px;
+}
+
+.button[disabled] span,
+.button.disabled span {
+  background-position: 100% -72px;
+}
+
+.button[disabled] span span,
+.button.disabled span span {
+  background-position: 0% -72px;
+}
+
+.button:hover span span span,
+.button:focus span span span,
+.button:active span span span,
+.button[disabled] span span span,
+.button.disabled span span span {
+  background-position: left center;
+}
+
+.button:hover span span span.after,
+.button:focus span span span.after,
+.button:active span span span.after,
+.button[disabled] span span span.after,
+.button.disabled span span span.after {
+  background-position: right center;
+}
+
+.button img {
+  margin-right: 5px;
+  vertical-align: text-top;
+  /* IE6 Hack */
+  _margin-top: 4px;
+  _vertical-align: text-bottom;
+  /* IE6 still requires a PNG transparency fix */ 
+  _display: none;
+}
+
+.button img.after {
+  margin-right: 0;
+  margin-left: 5px;
+  /* IE6 still requires a PNG transparency fix */ 
+  _margin-left: 0;
+}
+
+.button.medium  { font-size: 15px !important; }
+.button.large  { font-size: 18px !important; }
+
+
+/*
+ * Button Skins
+ * 
+ * .PNG background images with alpha transparency are also supplied if you'd rather use them instead of the 
+ * default .GIF images. (Just beware of IE6's lack of support.) 
+ * 
+ * Additional skins can be added below. The images/skins/ButtonTemplate.psd can be used to create new skins.
+ * Prefix the skin name with "sexy" to avoid any potential conflicts with other class names. 
+ */
+
+/* Silver Button Skin (the default skin) */
+
+.button,
+.button.silver {
+  color: #666 !important;
+}
+  
+.button:hover,
+.button:focus,
+.button.silver:hover,
+.button.silver:focus {
+  color: #333 !important;
+}
+  
+.button span,
+.button.silver span {
+  background-image: url(/assets/images/buttons/silver/button_right.gif);
+}
+
+.button span span,
+.button.silver span span {
+  background-image: url(/assets/images/buttons/silver/button_left.gif);
+}
+
+/* Orange Button Skin */
+
+.button.orange,
+.button.orange:hover,
+.button.orange:focus {
+  color: white !important;
+}
+  
+.button.orange[disabled],
+.button.orange[disabled]:hover,
+.button.orange[disabled]:active,
+.button.orange[disabled]:focus,
+.button.orange.disabled,
+.button.orange.disabled:hover,
+.button.orange.disabled:active,
+.button.orange.disabled:focus {
+  color: #333 !important;
+}
+  
+.button.orange span {
+  background-image: url(/assets/images/buttons/orange/button_right.gif);
+}
+
+.button.orange span span {
+  background-image: url(/assets/images/buttons/orange/button_left.gif);
+}
+
+/* Yellow Button Skin */
+
+.button.yellow,
+.button.yellow:hover,
+.button.yellow:focus {
+  color: #994800 !important;
+}
+  
+.button.yellow span {
+  background-image: url(/assets/images/buttons/yellow/button_right.gif);
+}
+
+.button.yellow span span {
+  background-image: url(/assets/images/buttons/yellow/button_left.gif);
+}
+
+
+/* 
+ * Simple Skin Buttons
+ */
+
+.button.simple { 
+  position: relative; 
+  padding: 5px 10px 5px;
+  font: inherit;
+  font-size: 13px !important;
+  font-style: normal !important; 
+  font-weight: bold !important; 
+  color: #fff !important;
+  line-height: 1; 
+  background-image: url(/assets/images/buttons/simple/awesome-overlay-sprite.png);
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  
+  /* Special effects */
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25), -2px 0 1px rgba(0,0,0,0.25); 
+  border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5); 
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  
+  /* IE only stuff */
+  border-bottom: 1px solid transparent\9;
+  _background-image: none;
+  
+  /* Cross browser inline block hack - http://blog.mozilla.com/webdev/2009/02/20/cross-browser-inline-block/ */
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *display: inline !important;
+  position: relative;
+  
+  /* Force hasLayout in IE */
+  zoom: 1;
+  
+  /* Disable text selection (Firefox only)*/
+  -moz-user-select: none;
+}
+
+.button.simple::selection {
+  background: transparent;
+}
+
+.button.simple:hover,
+.button.simple:focus {
+  background-position: 0 -50px; 
+  color: #fff !important;
+}
+
+.button.simple:active { 
+  background-position: 0 -100px; 
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.7); 
+  /* Unfortunately, Safari doesn't support inset yet */
+  -webkit-box-shadow: none;
+  
+  /* IE only stuff */
+  border-bottom: 0\9;
+  border-top: 1px solid #666\9;
+}
+
+.button.simple[disabled], 
+.button.simple.disabled { 
+  background-position: 0 -150px; 
+  color: #333 !important;
+  text-shadow: none; 
+}
+
+.button.simple[disabled]:hover,
+.button.simple[disabled]:focus,
+.button.simple[disabled]:active,
+.button.simple.disabled:hover,
+.button.simple.disabled:focus,
+.button.simple.disabled:active {
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5); 
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+} 
+
+.button.simple span {
+  height: auto;
+  padding-left: 24px;
+  padding-right: 0;
+  background-position: left center;
+  background-repeat: no-repeat;
+  /* IE6 still requires a PNG transparency fix */ 
+  _padding-left: 0;
+}
+
+.button.simple span.after {
+  padding-left: 0;
+  padding-right: 24px;
+  background-position: right center;
+  /* IE6 still requires a PNG transparency fix */ 
+  _padding-right: 0;
+}
+
+/* Simple button colors */
+.button.simple         { background-color: #061320; }    /* Default */
+.button.simple.black   { background-color: #333; }
+.button.simple.red     { background-color: #a90118; }
+.button.simple.orange  { background-color: #ED7D26; }
+.button.simple.yellow  { background-color: #ffb515; }
+.button.simple.green   { background-color: #59a901; }
+.button.simple.blue    { background-color: #015ea9; }
+.button.simple.teal    { background-color: #2daebf; }
+.button.simple.magenta { background-color: #a9014b; }
+.button.simple.purple  { background-color: #9d01a9; }
+
+/* Simple button sizes */
+.button.simple.small          { padding: 4px 7px 5px; font-size: 10px !important; }
+.button.simple.small:active   { padding: 5px 7px 4px; }
+.button.simple                { /* default */ }
+.button.simple:active         { padding: 6px 10px 4px; }
+.button.simple.medium         { /* default */ }
+.button.simple.medium:active  { padding: 6px 10px 4px; }
+.button.simple.large          { padding: 8px 14px 8px; font-size: 14px !important; }
+.button.simple.large:active   { padding: 9px 14px 7px; }
+.button.simple.xl             { padding: 8px 14px 8px; font-size: 16px !important; }
+.button.simple.xl:active      { padding: 9px 14px 7px; }
+.button.simple.xxl            { padding: 8px 14px 8px; font-size: 20px !important; }
+.button.simple.xxl:active     { padding: 9px 14px 7px; }
+.button.simple.xxxl           { padding: 8px 14px 8px; font-size: 26px !important; }
+.button.simple.xxxl:active    { padding: 9px 14px 7px; }
+
+.button.simple.small[disabled]:active,
+.button.simple.small.disabled:active     { padding: 4px 7px 5px; }
+.button.simple[disabled]:active,
+.button.simple.disabled:active           { padding: 5px 10px 5px; }
+.button.simple.medium[disabled]:active,
+.button.simple.medium.disabled:active    { padding: 6px 10px 4px; }
+.button.simple.large[disabled]:active,
+.button.simple.large.disabled:active     { padding: 8px 14px 8px; }
+.button.simple.xl[disabled]:active,
+.button.simple.xl.disabled:active        { padding: 8px 14px 8px; }
+.button.simple.xxl[disabled]:active,
+.button.simple.xxl.disabled:active       { padding: 8px 14px 8px; }
+.button.simple.xxxl[disabled]:active,
+.button.simple.xxxl.disabled:active      { padding: 8px 14px 8px; }
+
+
+/*
+ * Icon Definitions
+ */
+
+.button span.ok         { background-image: url(/assets/images/icons/fatcow/16x16/tick.png) !important; }
+.button span.cancel     { background-image: url(/assets/images/icons/fatcow/16x16/cross.png) !important; }
+.button span.add        { background-image: url(/assets/images/icons/fatcow/16x16/add.png) !important; }
+.button span.delete     { background-image: url(/assets/images/icons/fatcow/16x16/delete.png) !important; }
+.button span.search     { background-image: url(/assets/images/icons/fatcow/16x16/magnifier.png) !important; }
+.button span.upload     { background-image: url(/assets/images/icons/fatcow/16x16/arrow_up.png) !important; }
+.button span.photo      { background-image: url(/assets/images/icons/fatcow/16x16/photo.png) !important; }
+.button span.email      { background-image: url(/assets/images/icons/fatcow/16x16/email.png) !important; }
+.button span.login      { background-image: url(/assets/images/icons/fatcow/16x16/user.png) !important; }
+.button span.bug        { background-image: url(/assets/images/icons/fatcow/16x16/flag_yellow.png) !important; }
+.button span.edit       { background-image: url(/assets/images/icons/fatcow/16x16/pencil.png) !important; }
+.button span.vip        { background-image: url(/assets/images/icons/fatcow/16x16/star.png) !important; }
+.button span.save       { background-image: url(/assets/images/icons/fatcow/16x16/disk.png) !important; }

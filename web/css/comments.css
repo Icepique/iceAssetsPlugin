@@ -1,0 +1,46 @@
+/* Reset form margin/padding */
+.comment_vote form { position:relative; margin:0; padding:0; height:16px; color:#000; }
+
+/* Position buttons */
+.comment_vote input { position:absolute; top:0; left:0; width:16px; height:16px; background:url(/assets/images/icons/thumbs.png) no-repeat 0 0; border:0; text-indent:-9999px; cursor:pointer; }
+.comment_vote input.vote_down { left:18px; background-position:-16px 0; }
+.comment_vote input:hover { background-position:0 -16px; }
+.comment_vote input.vote_down:hover { background-position:-16px -16px; }
+.comment_vote input:active { background-position:0 -32px; }
+.comment_vote input.vote_down:active { background-position:-16px -32px; }
+
+/* Position score */
+.comment_vote strong { display:block; margin:0 0 0 40px; font-size:12px; line-height:16px; text-align:left; }
+
+/* Closed form */
+.comment_vote .closed input, .comment_vote .closed input:hover { background-position:0 -48px; cursor:default; }
+.comment_vote .closed input.vote_down, .comment_vote .closed input.vote_down:hover { background-position:-16px -48px; }
+
+/* Right aligned */
+.comment_vote.right input { left:auto; right:18px; }
+.comment_vote.right input.vote_down { right:0; }
+.comment_vote.right strong { margin:0 40px 0 0; text-align:right; }
+
+/* Fix for IE <= 7: text-indent does not work to hide text on submit buttons */
+.comment_vote input { font-size:0; line-height:999px; }
+
+.comment span.comment_author {
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.comment div.avatar {
+  margin-right: 30px;
+  text-align: center;
+}
+
+.comment blockquote.comment_content {
+  text-align: left;
+  margin-left: 3px;
+  margin-right: 0;
+}
+
+#comment_form .captcha input {
+  text-align: center;
+  font-size: 24px;
+}
